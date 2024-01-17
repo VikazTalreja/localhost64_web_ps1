@@ -3,6 +3,7 @@ import transport from "../assets/transport.png";
 import accommodation from "../assets/accommodation.png";
 import hotel from "../assets/hotel.png";
 import report from "../assets/report.png";
+import local_services from "../assets/local_supplier.png";
 
 const services_data = [
   {
@@ -20,6 +21,10 @@ const services_data = [
   {
     name: "Restaurant",
     icon: hotel,
+  },
+  {
+    name: "Local Service",
+    icon: local_services,
   },
   {
     name: "Report",
