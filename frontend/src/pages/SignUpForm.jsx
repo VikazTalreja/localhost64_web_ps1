@@ -1,4 +1,4 @@
-// SignUpForm.jsx
+// SignUpForm.jsx changes to be made: remove- location and host type, two buttons traveller and host add checkbox for user type
 
 import React, { useState } from 'react';
 import './SignUpForm.css';

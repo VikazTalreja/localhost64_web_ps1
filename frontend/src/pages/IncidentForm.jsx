@@ -1,3 +1,5 @@
+//add preview of photo, location , delete witness button , add description of the incident 
+// merge both files 
 import React, { useState } from 'react';
 import './IncidentForm.css';
 
