@@ -1,7 +1,9 @@
+import ClientDashboard from "./pages/ClientDashboard";
+
 function App() {
   return (
     <>
-      <div className="text-fuchsia-700">Hello world</div>{" "}
+      <ClientDashboard />
     </>
   );
 }
