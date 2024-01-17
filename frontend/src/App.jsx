@@ -1,7 +1,8 @@
+import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <div className="text-fuchsia-700">Hello world</div>{" "}
+      <Home />
     </>
   );
 }
