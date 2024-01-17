@@ -1,7 +1,11 @@
+import ClientDashboard from "./pages/ClientDashboard";
+import Attractions from "./pages/Attractions";
+
 function App() {
   return (
     <>
-      <div className="text-fuchsia-700">Hello world</div>{" "}
+      {/* <ClientDashboard /> */}
+      <Attractions />
     </>
   );
 }
