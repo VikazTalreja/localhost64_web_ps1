@@ -1,0 +1,77 @@
+/* LoginForm.css */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3498db; /* Blue color */
+    font-family: 'Arial', sans-serif; /* Replace 'Arial' with your preferred font */
+  }
+  
+  .login-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #ffffff; /* White color */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  h2 {
+    color: #3498db; /* Blue color for contrast */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    color: #3498db;
+    display: block;
+    text-align: left;
+    margin-top: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #3498db; /* Blue color for border */
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .password-wrapper {
+    position: relative;
+  }
+  
+  .password-field {
+    width: calc(100% - 30px);
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .view-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #3498db;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #1370cc; /* Dark blue color */
+    
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+   
+  }
+  
+  
+  
