@@ -17,3 +17,10 @@ export const businessHandle = async (req, res) => {
 
   res.json({ message: "success", status: 200 });
 };
+
+export const getBusiness = async (req, res) => {
+  const info = req.body;
+  const data = await Business.find({ user_id: info.user_id });
+  console.log(data);
+  res.json(data);
+};
