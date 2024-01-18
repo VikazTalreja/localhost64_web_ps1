@@ -1,0 +1,59 @@
+{
+  "Most_famous": [
+    {
+      "imageUrl": "",
+      "title": "UI/UX Review Check 1",
+      "description": "Description for card 1."
+    },
+    {
+      "imageUrl": "https://example.com/image2.jpg",
+      "title": "UI/UX Review Check 2",
+      "description": "Description for card 2."
+    }
+  ],
+
+  "Best_places": [
+    {
+      "imageUrl": "https://example.com/image3.jpg",
+      "title": "UI/UX Review Check 3",
+      "description": "Description for card 3."
+    },
+    {
+      "imageUrl": "https://example.com/image4.jpg",
+      "title": "UI/UX Review Check 4",
+      "description": "Description for card 4."
+    },
+    {
+      "imageUrl": "https://example.com/image5.jpg",
+      "title": "UI/UX Review Check 5",
+      "description": "Description for card 5."
+    }
+  ],
+  "Near_me": [
+    {
+      "imageUrl": "https://example.com/image6.jpg",
+      "title": "UI/UX Review Check 6",
+      "description": "Description for card 6."
+    },
+    {
+      "imageUrl": "https://example.com/image7.jpg",
+      "title": "UI/UX Review Check 7",
+      "description": "Description for card 7."
+    },
+    {
+      "imageUrl": "https://example.com/image8.jpg",
+      "title": "UI/UX Review Check 8",
+      "description": "Description for card 8."
+    },
+    {
+      "imageUrl": "https://example.com/image9.jpg",
+      "title": "UI/UX Review Check 9",
+      "description": "Description for card 9."
+    },
+    {
+      "imageUrl": "https://example.com/image10.jpg",
+      "title": "UI/UX Review Check 10",
+      "description": "Description for card 10."
+    }
+  ]
+}

@@ -23,10 +23,6 @@ const services_data = [
     icon: hotel,
   },
   {
-    name: "Local Service",
-    icon: local_services,
-  },
-  {
     name: "Report",
     icon: report,
   },

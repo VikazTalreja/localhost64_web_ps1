@@ -8,6 +8,8 @@ import Bar1 from "../components/sidebar/sidebar";
 import Mountain from "../assets/Mountain.jpg";
 import Beach from "../assets/beaches.jpg";
 import Desert from "../assets/Desert.jpg";
+import { UserIcon } from "@heroicons/react/24/outline";
+import { SignalIcon } from "@heroicons/react/24/solid";
 
 const ClientDashboard = () => {
   return (
@@ -41,23 +43,40 @@ const ClientDashboard = () => {
           <ServiceCard name={service.name} icon={service.icon} />
         ))}
       </div> */}
-      <section className="w-[15vw] h-screen">
+      <section className="w-[15vw] h-screen ">
         <Bar1 />
       </section>
-      <section className="w-full mt-8">
-        <div>
-          <h5 className="text-lg text-gray-700">Good Morning username</h5>
-          <h2 className="text-2xl font-semibold">
-            Your adventure begins here - welcome to our travel community.
-          </h2>
+      <section className=" ml-3 w-full mt-8">
+        <div className="flex flex-row justify-between">
+          <div>
+            <h5 className="text-lg text-gray-700">Good Morning username</h5>
+            <h2 className="text-2xl font-semibold">
+              Your adventure begins here - welcome to our travel community.
+            </h2>
+          </div>
+          <div className="text-lg mr-7  cursor-pointer bg-white border-4 p-3 rounded-lg border-black border-opacity-20 hover:bg-blue-gray-300">
+            <span className="block">Your Location</span>
+            <SignalIcon className="h-6 w-6 inline " />
+            <span className="inline">Ulhasnagar</span>
+          </div>
         </div>
-        <div className="w-full relative flex justify-between mt-10  text-xl mr-6">
-          <input
-            type="text"
-            className=" w-full mr-12 placeholder-gray-400 text-gray-900 p-3 border-black"
-            placeholder="Search"
-          />
-          <button className="p-4 bg-purple-500 rounded-lg mr-12">Search</button>
+
+        <div className="flex flex-row space-x-5 mt-5 mr-5 overflow-auto">
+          <div className="flex flex-row space-x-8 card  ">
+            {services_data.map((service, idx) => (
+              <ServiceCard name={service.name} icon={service.icon} />
+            ))}
+          </div>
+          {/* <div className="card h-[230px] w-[190px] bg-black"></div> */}
+        </div>
+        <div>
+          <div className="friends mt-7">
+            <span className="text-2xl">Recommendations</span>
+          </div>
+          <div className=" grid grid-cols-1 gap-4 ml-3 mr-5 ">
+            <div className="bg-black w-full h-20  rounded-lg"></div>
+            <div className="bg-black w-full h-20 rounded-lg"></div>
+          </div>
         </div>
       </section>
       <section className="w-[25vw] bg-purple-900">

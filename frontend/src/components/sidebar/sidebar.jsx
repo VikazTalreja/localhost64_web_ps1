@@ -39,7 +39,7 @@ export default function SidebarWithContentSeparator() {
   };
 
   return (
-    <Card className="h-full w-full text-black  p-4 shadow-2xl rounded-none shadow-blue-gray-900/5">
+    <Card className="h-full w-full text-black border-4 p-4 shadow-2xl rounded-none shadow-blue-gray-900/5">
       <div className="mb-2 p-4 text-black">
         <Typography variant="h5" color="blue-gray">
           WanderWisdom
@@ -82,11 +82,11 @@ export default function SidebarWithContentSeparator() {
               size="sm"
               variant="ghost"
               color="blue-gray"
-              className="rounded-full"
+              className="rounded-full -ml-20"
             />
           </ListItemSuffix>
         </ListItem>
-        <hr className="my-2 border-blue-gray-900" />
+        <hr className="my-2 w-40 border-blue-gray-900" />
         <ListItem className="py-2  pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700  dark:text-white">
           <ListItemPrefix>
             <Cog6ToothIcon className="h-5 w-5" />
