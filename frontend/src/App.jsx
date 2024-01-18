@@ -6,17 +6,50 @@ import IncidentForm from "./pages/IncidentForm";
 import IncidentList from "./pages/IncidentList";
 import ClientDashboard from "./pages/ClientDashboard";
 import BusinessForm from "./pages/BusinessForm";
+import BusinessDashboard from "./pages/BusinessDashboard";
 
 import Attractions from "./pages/Attractions";
 import Home from "./pages/Home";
 
-function App() {
-  return (
-    <div className="">
-      <ClientDashboard />
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-    </div>
-  );
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/signin",
+    element: <LoginForm />,
+  },
+  {
+    path: "/signup",
+    element: <SignUpForm />,
+  },
+  {
+    path: "/client",
+    element: <ClientDashboard />,
+  },
+  {
+    path: "/businessform",
+    element: <BusinessForm />,
+  },
+  {
+    path: "/reportincident",
+    element: <IncidentForm />,
+  },
+  {
+    path: "/incidents",
+    element: <IncidentList />,
+  },
+  {
+    path: "/business",
+    element: <BusinessDashboard />,
+  },
+]);
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;

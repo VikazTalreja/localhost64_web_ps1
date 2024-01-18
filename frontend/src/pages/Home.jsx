@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Nav from "../components/navbar/navbar";
 import {
   Accordion,
@@ -32,12 +34,16 @@ function Home() {
               adventures uniquely yours .
             </p>
             <div class=" space-y-4 sm:flex sm:space-y-0 sm:space-x-4 ">
-              <Button className="md:w-48 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
-                Log In
-              </Button>
-              <Button className="md:w-48 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
-                Sign Up
-              </Button>
+              <Link to="/signin">
+                <Button className="md:w-48 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                  Log In
+                </Button>
+              </Link>
+              <Link to="/signup">
+                <Button className="md:w-48 text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm  dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">
+                  Sign Up
+                </Button>
+              </Link>
             </div>
           </div>
           <div class="hidden  lg:mt-0 lg:col-span-5 lg:flex">

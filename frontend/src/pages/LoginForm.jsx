@@ -61,6 +61,12 @@ const LoginForm = () => {
     localStorage.setItem("email", info.email);
     localStorage.setItem("type", info.type);
     localStorage.setItem("id", info.id);
+
+    if (localStorage.getItem("type") == "Traveler") {
+      window.location.href = "http://localhost:5173/client";
+    } else {
+      window.location.href = "http://localhost:5173/business";
+    }
   };
 
   return (
