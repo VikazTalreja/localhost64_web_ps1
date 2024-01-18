@@ -10,11 +10,15 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
+    <div className="bg-black">
       {/* <ClientDashboard /> */}
       {/* <Attractions /> */}
+
       <Home />
-    </>
+      <SignUpForm />
+      <LoginForm />
+      {/* <LoginForm className="overflow-y-hidden" /> */}
+    </div>
   );
 }
 

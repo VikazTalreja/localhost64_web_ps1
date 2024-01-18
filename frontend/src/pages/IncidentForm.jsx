@@ -1,15 +1,14 @@
-//add preview of photo, location , delete witness button , add description of the incident 
-// merge both files 
-import React, { useState } from 'react';
-import './IncidentForm.css';
+//add preview of photo, location , delete witness button , add description of the incident
+// merge both files
+import React, { useState } from "react";
 
 const IncidentForm = () => {
   const [incident, setIncident] = useState({
-    type: '',
-    location: '',
-    date: '',
-    time: '',
-    description: '',
+    type: "",
+    location: "",
+    date: "",
+    time: "",
+    description: "",
     anonymous: false,
     photos: [], // New feature: Allow users to upload photos
     witnesses: [], // New feature: Record information about witnesses
@@ -19,7 +18,7 @@ const IncidentForm = () => {
     const { name, value, type, checked } = e.target;
     setIncident({
       ...incident,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -54,7 +53,7 @@ const IncidentForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to submit incident details, including photos and witness information
-    console.log('Incident Submitted:', incident);
+    console.log("Incident Submitted:", incident);
   };
 
   return (
@@ -64,7 +63,14 @@ const IncidentForm = () => {
         {/* Existing form fields */}
         <div>
           <label htmlFor="photos">Photos:</label>
-          <input type="file" id="photos" name="photos" accept="image/*" multiple onChange={handlePhotoUpload} />
+          <input
+            type="file"
+            id="photos"
+            name="photos"
+            accept="image/*"
+            multiple
+            onChange={handlePhotoUpload}
+          />
         </div>
 
         {/* New feature: Input fields for witness information */}
@@ -77,7 +83,7 @@ const IncidentForm = () => {
                 type="text"
                 id={`witnessName${index}`}
                 name={`witnessName${index}`}
-                value={witness.name || ''}
+                value={witness.name || ""}
                 onChange={(e) => handleWitnessInput(e, index)}
               />
               <label htmlFor={`witnessContact${index}`}>Contact:</label>
@@ -85,7 +91,7 @@ const IncidentForm = () => {
                 type="text"
                 id={`witnessContact${index}`}
                 name={`witnessContact${index}`}
-                value={witness.contact || ''}
+                value={witness.contact || ""}
                 onChange={(e) => handleWitnessInput(e, index)}
               />
             </div>
