@@ -492,4 +492,4 @@ function Home() {
   );
 }
 
-export default Home2;
+export default Home;
