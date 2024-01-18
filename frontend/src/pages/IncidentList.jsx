@@ -1,30 +1,34 @@
+
 import React, { useState } from 'react';
+
+
+
 
 const IncidentList = () => {
   const [incidents, setIncidents] = useState([
     {
       id: 1,
-      type: 'Accident',
-      location: 'Main Street',
-      date: '2022-03-15',
-      time: '15:30',
-      description: 'Car collision at the intersection.',
+      type: "Accident",
+      location: "Main Street",
+      date: "2022-03-15",
+      time: "15:30",
+      description: "Car collision at the intersection.",
     },
     {
       id: 2,
-      type: 'Theft',
-      location: 'Park Avenue',
-      date: '2022-03-14',
-      time: '12:45',
-      description: 'Stolen bike from the park.',
+      type: "Theft",
+      location: "Park Avenue",
+      date: "2022-03-14",
+      time: "12:45",
+      description: "Stolen bike from the park.",
     },
     {
       id: 3,
-      type: 'Fire',
-      location: 'City Square',
-      date: '2022-03-12',
-      time: '18:00',
-      description: 'Building fire, emergency services on the scene.',
+      type: "Fire",
+      location: "City Square",
+      date: "2022-03-12",
+      time: "18:00",
+      description: "Building fire, emergency services on the scene.",
     },
     // Additional dummy incidents
     {
@@ -92,8 +96,8 @@ const IncidentList = () => {
     setSortByDate(!sortByDate);
     // Sort incidents by date based on the current state of sortByDate
     const sortedIncidents = [...incidents].sort((a, b) => {
-      const dateA = new Date(a.date + 'T' + a.time);
-      const dateB = new Date(b.date + 'T' + b.time);
+      const dateA = new Date(a.date + "T" + a.time);
+      const dateB = new Date(b.date + "T" + b.time);
       return sortByDate ? dateA - dateB : dateB - dateA;
     });
     setIncidents(sortedIncidents);
@@ -105,13 +109,18 @@ const IncidentList = () => {
       <div>
         <label>
           Sort by Date:
-          <input type="checkbox" checked={sortByDate} onChange={handleSortByDate} />
+          <input
+            type="checkbox"
+            checked={sortByDate}
+            onChange={handleSortByDate}
+          />
         </label>
       </div>
       <ul>
         {incidents.map((incident) => (
           <li key={incident.id}>
-            <strong>{incident.type}:</strong> {incident.description} ({incident.location} - {incident.date} {incident.time})
+            <strong>{incident.type}:</strong> {incident.description} (
+            {incident.location} - {incident.date} {incident.time})
           </li>
         ))}
       </ul>

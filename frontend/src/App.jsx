@@ -14,8 +14,9 @@ function App() {
     <>
       {/* <ClientDashboard /> */}
      {/* //<Attractions /> */}
-      <BusinessForm/>
+      {/* <BusinessForm/> */}
       {/* <IncidentList/> */}
+      <IncidentForm/>
     </>
   );
 }
