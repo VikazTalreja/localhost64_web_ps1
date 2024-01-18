@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const businessModel = new Schema({
   business_name: {
@@ -12,8 +12,22 @@ const businessModel = new Schema({
     type: String,
     required: true,
   },
+  aadhar_no: {
+    type: String,
+    required: true,
+  },
   owner_name: {
     type: String,
     required: true,
   },
+  address: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
 });
+
+export default mongoose.model("Business", businessModel);
