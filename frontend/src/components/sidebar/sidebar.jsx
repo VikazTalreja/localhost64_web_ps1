@@ -82,7 +82,7 @@ export default function SidebarWithContentSeparator() {
               size="sm"
               variant="ghost"
               color="blue-gray"
-              className="rounded-full -ml-20"
+              className="rounded-full -ml-20 "
             />
           </ListItemSuffix>
         </ListItem>

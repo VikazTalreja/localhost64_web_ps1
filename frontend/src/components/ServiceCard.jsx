@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+// import {
+//   Card,
+//   CardHeader,
+//   CardBody,
+//   Typography,
+//   Avatar,
+// } from "@material-tailwind/react";
+
 import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Typography,
-  Avatar,
+  Tooltip,
 } from "@material-tailwind/react";
 
-const ServiceCard = ({ name, icon }) => {
+const ServiceCard = ({ name, icon, image }) => {
   return (
     // <div className="carder-solid flex flex-col border-black cursor-pointer  h-[230px] w-[190px]">
     //   <div className="card-image">
@@ -15,39 +24,44 @@ const ServiceCard = ({ name, icon }) => {
     //   </div>
     //   <div className="card-text">{name}</div>
     // </div>
-    <Card
-      shadow={false}
-      className="relative h-[230px] w-[190px] grid items-end justify-center overflow-hidden text-center cursor-pointer"
-    >
-      <CardHeader
-        floated={false}
-        shadow={false}
-        color="transparent"
-        className="absolute inset-0 m-0 h-full w-full rounded-none bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-center"
-      >
-        <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50" />
-      </CardHeader>
-      <CardBody className="relative py-14 px-6 md:px-12">
-        <Typography
-          variant="h2"
-          color="white"
-          className="mb-6 font-medium leading-[1.5]"
-        >
-          {name}
-        </Typography>
-        <Typography variant="h5" className="mb-4 text-gray-400">
-          {name}
-        </Typography>
-        <Avatar
-          size="xl"
-          variant="circular"
-          alt="Icon"
-          className="border-2 border-white"
-          src={icon}
+    //     <Card
+    //       shadow={false}
+    //       className="relative  h-[180px] active:border-purple-500 border-2 border-black w-[140px] grid items-end justify-center overflow-hidden text-center cursor-pointer"
+    //       onClick={() => {
+    //         if (onClick) {
+    //           onClick(name); // Pass the name of the clicked service
+    //         }
+    //       }}
+    //     >
+    //       <CardBody className="flex flex-col items-center justify-center">
+    //         <Avatar size="xl" variant="" alt="Icon" className="" src={icon} />
+    //         <Typography variant="h5" className="mb-4 text-gray-400">
+    //           {name}
+    //         </Typography>
+    //       </CardBody>
+    //     </Card>
+    //   );
+    // };
+
+    <Card className="h-[180px] w-[140px] transition-transform transform-gpu hover:scale-110 ">
+      <CardHeader floated={false} className="h-80">
+        <img
+          src={image}
+          alt="profile-picture"
+          className="border-1 border-gray-800"
         />
+      </CardHeader>
+      <CardBody className="text-center">
+        <Typography color="blue-gray" className="mb-2">
+          {name}
+        </Typography>
+        {/* <Typography
+          color="blue-gray"
+          className="font-medium"
+          textGradient
+        ></Typography> */}
       </CardBody>
     </Card>
   );
 };
-
 export default ServiceCard;
