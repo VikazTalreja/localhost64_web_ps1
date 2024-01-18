@@ -12,8 +12,9 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <BusinessForm />
+    <div className="">
+      <ClientDashboard />
+
     </div>
   );
 }
