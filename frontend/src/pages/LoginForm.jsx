@@ -1,9 +1,15 @@
 // LoginForm.jsx
 
 import React, { useState } from "react";
+import axios from "axios";
+import { jwtDecode } from "jwt-decode";
+
 import purpleboy from "../assets/Purple_boy.png";
 
 const LoginForm = () => {
+  const email = document.getElementById("username");
+  const password = document.getElementById("password");
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -18,6 +24,43 @@ const LoginForm = () => {
     e.preventDefault();
     // Add your authentication logic here (e.g., send data to a server).
     console.log("Login Form submitted:", formData);
+
+    console.log(email.value);
+    console.log(password.value);
+
+    const d = {
+      username: email.value,
+      password: password.value,
+    };
+
+    console.log(d);
+
+    axios
+      .post("http://localhost:8080/auth/signin", d)
+      .then((res) => {
+        console.log(JSON.stringify(res));
+        if (res.data.message === "success") {
+          console.log(res.data.message);
+          console.log(res.data.token);
+          localStorage.setItem("token", res.data.token);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    const newToken = localStorage.getItem("token");
+    console.log(newToken);
+    const finalToken = newToken.replace("Bearer ", "");
+    console.log(finalToken);
+    const info = jwtDecode(finalToken);
+    console.log("----------------------------------");
+    console.log(info);
+
+    localStorage.setItem("name", info.name);
+    localStorage.setItem("email", info.email);
+    localStorage.setItem("type", info.type);
+    localStorage.setItem("id", info.id);
   };
 
   return (

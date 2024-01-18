@@ -1,4 +1,4 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const reviewModel = new Schema({
   title: {
@@ -10,8 +10,7 @@ const reviewModel = new Schema({
     required: true,
   },
   date: {
-    type: new Date(),
-    required: true,
+    type: Date,
   },
   content: {
     type: String,
@@ -20,6 +19,14 @@ const reviewModel = new Schema({
   user_id: {
     type: mongoose.Schema.Types.ObjectId,
   },
+  business: {
+    type: String,
+    required: true,
+  },
+  stars: {
+    type: Number,
+    required: true,
+  },
 });
 
-export default mongoose.model(reviewModel);
+export default mongoose.model("Review", reviewModel);

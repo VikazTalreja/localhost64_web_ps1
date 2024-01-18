@@ -5,8 +5,7 @@ import User from "../models/UserModel.js";
 
 export const singIn = (req, res) => {
   const user = req.body;
-
-  User.findOne({ email: user.email }).then((userDB) => {
+  User.findOne({ email: user.username }).then((userDB) => {
     console.log(`hello ${userDB}`);
     console.log(user.email);
     if (!userDB) {
@@ -21,6 +20,7 @@ export const singIn = (req, res) => {
             id: userDB._id,
             name: userDB.name,
             email: userDB.email,
+            type: userDB.user_type,
           };
           jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
             if (err) {
@@ -45,7 +45,7 @@ export const singIn = (req, res) => {
 
 export const singUp = async (req, res) => {
   const user = req.body;
-
+  console.log(user);
   const enteredEmail = await User.findOne({ email: user.email });
 
   if (enteredEmail) {
@@ -54,12 +54,16 @@ export const singUp = async (req, res) => {
   } else {
     user.password = await bcrypt.hash(req.body.password, 10);
     const userDB = new User({
-      name: user.name,
+      name: user.first_name + " " + user.last_name,
       email: user.email.toLowerCase(),
       password: user.password,
+      user_type: user.type,
     });
 
     userDB.save();
-    res.json({ message: "Registered successfully! Welcome aboard wanderer" });
+    res.json({
+      message: "Registered successfully! Welcome aboard wanderer",
+      status: 200,
+    });
   }
 };

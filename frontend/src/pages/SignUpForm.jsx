@@ -1,9 +1,17 @@
 // SignUpForm.jsx changes to be made: remove- location and host type, two buttons traveller and host add checkbox for user type
 
 import React, { useState } from "react";
+import axios from "axios";
 import purpleboy from "../assets/Purple_boy.png";
 
 const SignUpForm = () => {
+  const fName = document.getElementById("firstName");
+  const lName = document.getElementById("lastName");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+
+  const [success, setSuccess] = useState("h");
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -44,7 +52,8 @@ const SignUpForm = () => {
       role: selectedRole,
     });
   };
-  const handleSignUp = (e) => {
+
+  const handleSignUp = async (e) => {
     e.preventDefault();
 
     // Check if passwords match
@@ -60,7 +69,35 @@ const SignUpForm = () => {
       ...formData,
       signedUp: true,
     });
-    console.log(formData);
+
+    const d = {
+      first_name: fName.value,
+      last_name: lName.value,
+      type: formData.role,
+      email: email.value,
+      password: password.value,
+    };
+
+    postData(d);
+  };
+
+  const postData = (d) => {
+    axios
+      .post("http://127.0.0.1:8080/auth/signup", d, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        if (res.status === 409) {
+          setSuccess("User already exists, please login");
+        }
+        setSuccess("Signed up successfully, Please login");
+        console.log("signed up successfully");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -175,21 +212,6 @@ const SignUpForm = () => {
 
                 <div>
                   <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
-                    Phone number
-                  </label>
-                  <input
-                    placeholder="XXX-XX-XXXX-XXX"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-purple-400 dark:focus:border-purple-400 focus:ring-purple-400 focus:outline-none focus:ring focus:ring-opacity-40"
-                    type="text"
-                    id="PhoneNumber"
-                    name="PhoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleInputChange}
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
                     Email address
                   </label>
                   <input
@@ -293,6 +315,7 @@ const SignUpForm = () => {
                   </svg>
                 </button>
               </form>
+              <div className="successful-signup text-black">{success}</div>
             </div>
           </div>
         </div>
