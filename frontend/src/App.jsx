@@ -7,12 +7,15 @@ import IncidentForm from './pages/IncidentForm';
 import IncidentList from './pages/IncidentList';
 import ClientDashboard from "./pages/ClientDashboard";
 import Attractions from "./pages/Attractions";
+import BusinessForm from './components/BusinessForm';
 
 function App() {
   return (
     <>
       {/* <ClientDashboard /> */}
-      <Attractions />
+     {/* //<Attractions /> */}
+      <BusinessForm/>
+      {/* <IncidentList/> */}
     </>
   );
 }
