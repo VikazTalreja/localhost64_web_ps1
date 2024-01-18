@@ -45,7 +45,7 @@ export const singIn = (req, res) => {
 
 export const singUp = async (req, res) => {
   const user = req.body;
-
+  console.log(user);
   const enteredEmail = await User.findOne({ email: user.email });
 
   if (enteredEmail) {
@@ -54,9 +54,10 @@ export const singUp = async (req, res) => {
   } else {
     user.password = await bcrypt.hash(req.body.password, 10);
     const userDB = new User({
-      name: user.name,
+      name: user.first_name + " " + user.last_name,
       email: user.email.toLowerCase(),
       password: user.password,
+      user_type: user.role,
     });
 
     userDB.save();
