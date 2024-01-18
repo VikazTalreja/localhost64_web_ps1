@@ -10,6 +10,8 @@ const SignUpForm = () => {
   const email = document.getElementById("email");
   const password = document.getElementById("password");
 
+  const [success, setSuccess] = useState("h");
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -67,9 +69,6 @@ const SignUpForm = () => {
       ...formData,
       signedUp: true,
     });
-    console.log(formData);
-
-    console.log(email.value);
 
     const d = {
       first_name: fName.value,
@@ -79,19 +78,21 @@ const SignUpForm = () => {
       password: password.value,
     };
 
-    console.log(d);
-
     postData(d);
   };
 
   const postData = (d) => {
     axios
-      .post("http://localhost:8000/auth/signup", d, {
+      .post("http://127.0.0.1:8080/auth/signup", d, {
         headers: {
           "Content-Type": "application/json",
         },
       })
-      .then(() => {
+      .then((res) => {
+        if (res.status === 409) {
+          setSuccess("User already exists, please login");
+        }
+        setSuccess("Signed up successfully, Please login");
         console.log("signed up successfully");
       })
       .catch((err) => {
@@ -314,6 +315,7 @@ const SignUpForm = () => {
                   </svg>
                 </button>
               </form>
+              <div className="successful-signup text-black">{success}</div>
             </div>
           </div>
         </div>

@@ -5,16 +5,16 @@ import { connectDB } from "./database/dbConnect.js";
 import userRouter from "./routes/auth.js";
 
 const app = express();
-
-const PORT = 8000;
+const PORT = 8080;
 
 app.set(PORT);
-
 app.use(cors());
 connectDB();
+
+app.use(express.json());
+
+app.use("/auth", userRouter);
 
 app.listen(PORT, () => {
   console.log(`runing on port ${PORT}`);
 });
-
-app.use("/auth", userRouter);

@@ -57,10 +57,13 @@ export const singUp = async (req, res) => {
       name: user.first_name + " " + user.last_name,
       email: user.email.toLowerCase(),
       password: user.password,
-      user_type: user.role,
+      user_type: user.type,
     });
 
     userDB.save();
-    res.json({ message: "Registered successfully! Welcome aboard wanderer" });
+    res.json({
+      message: "Registered successfully! Welcome aboard wanderer",
+      status: 200,
+    });
   }
 };
