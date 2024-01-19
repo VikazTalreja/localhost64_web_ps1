@@ -15,9 +15,9 @@ import BusinessDashboard from "./pages/BusinessDashboard";
 function App() {
   return (
     <div className="">
-      {/* <BusinessDashboard /> */}
+      <BusinessDashboard />
       {/* <Card /> */}
-      <ClientDashboard />
+      {/* <ClientDashboard /> */}
     </div>
   );
 }
