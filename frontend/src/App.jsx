@@ -10,12 +10,14 @@ import Card from "./components/card/card";
 
 import Attractions from "./pages/Attractions";
 import Home from "./pages/Home";
+import BusinessDashboard from "./pages/BusinessDashboard";
 
 function App() {
   return (
     <div className="">
-      <ClientDashboard />
+      <BusinessDashboard />
       {/* <Card /> */}
+      {/* <ClientDashboard /> */}
     </div>
   );
 }
